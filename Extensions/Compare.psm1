@@ -706,7 +706,7 @@ function Start-BulkCompareExportObjects
                 $objName = Get-GraphObjectName (?? $compObj.Object1 $compObj.Object2) $item.ObjectType
                 foreach($compValue in $compObj.Result)
                 {
-                    $compValue += [PSCustomObject]@{
+                    $compValue = [PSCustomObject]@{
                         ObjectName = $objName
                         Id = $compObj.Id
                         Type = $compObj.ObjectType.Title
